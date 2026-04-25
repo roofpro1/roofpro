@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="shortcut icon" href="Logo.png" type="image/x-icon" />
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+    <link rel="stylesheet" href="About.css">
+    <title>About Us - Roofing Company</title>
+
+</head>
+
+<body>
+    <!------------------------------- Header Section -->
+    <header class="header" id="header">
+        <div class="container">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="#"><img src="Logo.png" alt="RoofPro Logo" /></a>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="nav">
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About_Us.html">About Us</a></li>
+                    <li><a href="Service.html">Services</a></li>
+                    <li><a href="Project.html">Projects</a></li>
+                    <li><a href="Contact-Us.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Contact & Hamburger -->
+            <div class="contact-cta">
+                <a href="tel:+15551234567" class="phone">📞 Call Now</a>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trust Badge -->
+        <div class="trust-badge">⭐ 4.9 Rating | Licensed & Insured</div>
+    </header>
+
+    <!--------------------------------- Sticky Mobile CTA -->
+    <div class="sticky-cta">
+        <a href="tel:+15551234567">📞 Call Now | Get Free Estimate</a>
+    </div>
+
+
+    <!-- Script Hamburger -->
+    <Script>
+        const hamburger = document.getElementById("hamburger");
+        const navLinks = document.getElementById("nav-links");
+        const navItems = document.querySelectorAll(".nav-links li a");
+        const header = document.getElementById("header");
+
+        // Toggle hamburger menu
+        hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+            hamburger.classList.toggle("active");
+        });
+
+        // Close menu when a link is clicked (mobile/tablet)
+        navItems.forEach((link) => {
+            link.addEventListener("click", () => {
+                if (navLinks.classList.contains("active")) {
+                    navLinks.classList.remove("active");
+                    hamburger.classList.remove("active");
+                }
+            });
+        });
+
+        // Shrink header on scroll
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 50) {
+                header.classList.add("shrink");
+            } else {
+                header.classList.remove("shrink");
+            }
+        });
+    </Script>
+
+
+    <!--------------------------------- Hero Section -->
+
+    <section class="hero">
+        <div class="hero-content">
+
+            <div class="hero-subtitle">About Our Company</div>
+
+            <h4 class="Hero-title">Built on Trust. <br><span>Driven by Excellence.</span> </h4>
+
+            <p>
+                We are a dedicated roofing company committed to delivering long-lasting
+                solutions with precision and integrity. Our team combines craftsmanship,
+                premium materials, and years of industry experience to ensure every project
+                reflects quality, reliability, and professionalism.
+            </p>
+
+            <a href="#" class="hero-btn">Get Free Estimate</a>
+
+        </div>
+    </section>
+
+    <!--------------------------------- First Section -->
+
+
+    <section class="section" id="roofSection">
+        <div class="container">
+
+            <!-- LEFT -->
+            <div class="left">
+                <div class="tag animate">DURABLE SOLUTIONS</div>
+
+                <h1 class="animate">Complete Roofing Solutions<br>For Every Home’s Needs</h1>
+
+                <p class="desc animate">
+                    We provide long-lasting roofing systems using modern techniques and high-quality materials.
+                </p>
+
+                <div class="features">
+                    <div class="animate"><span>✔</span> Licensed Contractors</div>
+                    <div class="animate"><span>✔</span> Safety Compliance</div>
+                    <div class="animate"><span>✔</span> Quality Materials</div>
+                    <div class="animate"><span>✔</span> Innovative Techniques</div>
+                    <div class="animate"><span>✔</span> Transparent Pricing</div>
+                    <div class="animate"><span>✔</span> Timely Completion</div>
+                    <div class="animate"><span>✔</span> Warranties Offered</div>
+                    <div class="animate"><span>✔</span> Post-Service Support</div>
+                </div>
+
+                <a href="#" class="btn animate">
+                    Know More
+                    <span>→</span>
+                </a>
+            </div>
+
+            <!-- RIGHT -->
+            <div class="right">
+
+                <!-- TOP IMAGE -->
+                <div class="card card-top animate">
+                    <img src="support-gallery-img-01-768x614.jpg">
+                </div>
+
+                <!-- MAIN STAT -->
+                <div class="stat animate">
+                    <h2 id="counter1">0</h2>
+                    <p>MODERN TECHNOLOGY</p>
+                </div>
+
+                <!-- SMALL STATS -->
+                <div class="bottom-stats">
+                    <div class="small-stat animate">
+                        <h3 id="counter2">0</h3>
+                        <p>FINISHED PROJECTS</p>
+                    </div>
+
+                    <div class="small-stat animate">
+                        <h3 id="counter3">0</h3>
+                        <p>EXCELLENCE AWARD</p>
+                    </div>
+                </div>
+
+                <!-- BOTTOM IMAGE -->
+                <div class="card card-bottom animate">
+                    <img src="support-gallery-img-02-768x614.jpg">
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        // COUNTER
+        function animateCounter(id, target, suffix = "") {
+            let count = 0;
+            let speed = target / 200;
+
+            let interval = setInterval(() => {
+                count += speed;
+                if (count >= target) {
+                    count = target;
+                    clearInterval(interval);
+                }
+                document.getElementById(id).innerText = Math.floor(count) + suffix;
+            }, 20);
+        }
+
+        // OBSERVER
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+
+                    document.querySelectorAll('.animate').forEach((el, i) => {
+                        setTimeout(() => el.classList.add('show'), i * 100);
+                    });
+
+                    animateCounter("counter1", 100, "K");
+                    animateCounter("counter2", 8, "K");
+                    animateCounter("counter3", 100, "+");
+
+                    observer.disconnect();
+                }
+            });
+        }, { threshold: 0.3 });
+
+        observer.observe(document.querySelector("#roofSection"));
+    </script>
+
+    <!-----------------------------------  Our Mission Vision -->
+
+    <section class="mission-vision">
+
+        <h2 class="section-title">Our <span>Mission & Vision</span></h2>
+
+        <p class="section-subtitle">
+            We are committed to delivering excellence through innovation, quality craftsmanship,
+            and building long-term relationships based on trust and reliability.
+        </p>
+
+        <div class="mv-container">
+
+            <!-- Mission -->
+            <div class="mv-card">
+                <div class="mv-icon">
+                    <!-- SVG ICON -->
+                    <svg viewBox="0 0 24 24">
+                        <path d="M3 13h2v8H3zm4-6h2v14H7zm4 3h2v11h-2zm4-8h2v19h-2zm4 11h2v8h-2z" />
+                    </svg>
+                </div>
+                <h3>Our Mission</h3>
+                <p>
+                    To provide high-quality, durable, and innovative roofing solutions that
+                    ensure safety, reliability, and long-term value. We focus on precision,
+                    integrity, and customer satisfaction in every project we deliver.
+                </p>
+            </div>
+
+            <!-- Vision -->
+            <div class="mv-card">
+                <div class="mv-icon">
+                    <!-- SVG ICON -->
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M12 2l2.39 4.84L20 7.27l-4 3.89.94 5.48L12 14.77l-4.94 2.87.94-5.48-4-3.89 5.61-.43z" />
+                    </svg>
+                </div>
+                <h3>Our Vision</h3>
+                <p>
+                    To become a leading name in the roofing industry by embracing modern
+                    technologies, maintaining the highest standards, and creating lasting
+                    partnerships with clients through consistent excellence.
+                </p>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+        // Intersection Observer (smooth pro animation)
+        const cards = document.querySelectorAll('.mv-card');
+
+        const observer2 = new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('show');
+                }
+            });
+        }, {
+            threshold: 0.2
+        });
+
+        cards.forEach(card => observer2.observe(card));
+    </script>
+
+    <!-----------------------------------  Our Team Section -->
+
+    <section class="team-section">
+        <div class="container-Team">
+            <h2 class="section-title-Team">Meet <span>Our Experts</span></h2>
+            <p class="section-subtitle-Team">
+                Skilled professionals dedicated to delivering top-quality roofing solutions.
+            </p>
+
+            <div class="team-grid">
+
+                <!-- Member 1 -->
+                <div class="team-card">
+                    <div class="team-img">
+                        <img src="team_01.jpg" alt="">
+                    </div>
+                    <div class="team-content">
+                        <h3>John Smith</h3>
+                        <span>Lead Contractor</span>
+                        <p>10+ years experience in residential and commercial roofing excellence.</p>
+                    </div>
+                </div>
+
+                <!-- Member 2 -->
+                <div class="team-card">
+                    <div class="team-img">
+                        <img src="photo-1595152772835-219674b2a8a6.jpg" alt="">
+                    </div>
+                    <div class="team-content">
+                        <h3>Michael Adams</h3>
+                        <span>Project Manager</span>
+                        <p>Expert in managing large-scale roofing projects with precision.</p>
+                    </div>
+                </div>
+
+                <!-- Member 3 -->
+                <div class="team-card">
+                    <div class="team-img">
+                        <img src="team_03.jpg" alt="">
+                    </div>
+                    <div class="team-content">
+                        <h3>David Wilson</h3>
+                        <span>Roof Specialist</span>
+                        <p>Specialized in modern roofing systems and advanced materials.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script>
+        // SCROLL REVEAL
+        const cards2 = document.querySelectorAll('.team-card');
+
+        window.addEventListener('scroll', () => {
+            cards2.forEach(card => {
+                const top = card.getBoundingClientRect().top;
+                if (top < window.innerHeight - 100) {
+                    card.classList.add('show');
+                }
+            });
+        });
+
+        // 3D TILT EFFECT
+        cards2.forEach(card => {
+            card.addEventListener('mousemove', (e) => {
+                const rect = card.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+
+                const rotateX = (y / rect.height - 0.5) * 10;
+                const rotateY = (x / rect.width - 0.5) * -10;
+
+                card.style.transform = `rotateX(${rotateX}deg) rotateY(${rotateY}deg)`;
+            });
+
+            card.addEventListener('mouseleave', () => {
+                card.style.transform = "rotateX(0) rotateY(0)";
+            });
+        });
+    </script>
+
+
+    <!------------------------------------- WHY CHOOSE US SECTION -->
+    <section class="why-section">
+
+        <i class="fas fa-home floating-icon icon1"></i>
+        <i class="fas fa-hammer floating-icon icon2"></i>
+        <i class="fas fa-shield-alt floating-icon icon3"></i>
+        <i class="fas fa-tools floating-icon icon4"></i>
+
+
+        <div class="why-container">
+
+
+            <div class="why-text reveal">
+
+                <h2>Why Choose <span>Our Roofing Experts</span></h2>
+
+                <p>
+                    We deliver durable, high-quality roofing systems that protect your home
+                    and increase long-term property value. Our experienced professionals
+                    combine craftsmanship, premium materials, and industry expertise to
+                    provide roofing solutions you can trust.
+                </p>
+
+
+                <div class="why-features">
+
+                    <div class="feature">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Licensed & Fully Insured</span>
+                    </div>
+
+                    <div class="feature">
+                        <i class="fas fa-award"></i>
+                        <span>Premium Quality Materials</span>
+                    </div>
+
+                    <div class="feature">
+                        <i class="fas fa-clock"></i>
+                        <span>Fast & Reliable Service</span>
+                    </div>
+
+                    <div class="feature">
+                        <i class="fas fa-star"></i>
+                        <span>5-Star Customer Satisfaction</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="why-stats reveal">
+
+                <div class="stat-card">
+                    <h3 class="counter" data-target="20">0</h3>
+                    <p>Years Experience</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3 class="counter" data-target="750">0</h3>
+                    <p>Projects Completed</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3 class="counter" data-target="500">0</h3>
+                    <p>Happy Clients</p>
+                </div>
+
+                <div class="stat-card">
+                    <h3 class="counter" data-target="100">0</h3>
+                    <p>Quality Guarantee %</p>
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+    <script>
+
+        /* COUNTER */
+
+        const counters = document.querySelectorAll(".counter")
+
+        const startCounter = (entry, observer) => {
+
+            if (entry[0].isIntersecting) {
+
+                counters.forEach(counter => {
+
+                    const updateCounter = () => {
+
+                        const target = +counter.getAttribute("data-target")
+
+                        const count = +counter.innerText
+
+                        const speed = target / 180
+
+                        if (count < target) {
+
+                            counter.innerText = Math.ceil(count + speed)
+
+                            setTimeout(updateCounter, 15)
+
+                        } else {
+
+                            counter.innerText = target
+
+                        }
+
+                    }
+
+                    updateCounter()
+
+                })
+
+                observer.disconnect()
+
+            }
+
+        }
+
+        const observer5 = new IntersectionObserver(startCounter)
+
+        observer5.observe(document.querySelector(".why-stats"))
+
+
+
+        /* SCROLL REVEAL */
+
+        function reveal() {
+
+            let reveals = document.querySelectorAll(".reveal")
+
+            reveals.forEach((el) => {
+
+                let windowHeight = window.innerHeight
+                let revealTop = el.getBoundingClientRect().top
+                let revealPoint = 120
+
+                if (revealTop < windowHeight - revealPoint) {
+
+                    el.classList.add("active")
+
+                }
+
+            })
+
+        }
+
+        window.addEventListener("scroll", reveal)
+
+
+
+        /* FEATURE ANIMATION */
+
+        const features = document.querySelectorAll(".feature")
+
+        const featureObserver = new IntersectionObserver(entries => {
+
+            entries.forEach(entry => {
+
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show")
+                }
+
+            })
+
+        })
+
+        features.forEach(feature => {
+            featureObserver.observe(feature)
+        })
+
+    </script>
+
+
+    <!------------------------------------- Testimonial  Section-->
+
+    <section id="roofTestimonialsSection">
+
+        <h2 class="section-title-testimonial">What Our Clients Say</h2>
+
+        <div class="owl-carousel roof-testimonial-carousel">
+
+            <div class="item-testimonial">
+                <div class="testimonial-card">
+                    <div class="review-text">
+                        Outstanding roofing service, fast team, professional work, results exceeded expectations
+                        completely today.
+                    </div>
+                    <div class="stars">★★★★★</div>
+                    <div class="client-name">Ali Khan</div>
+                    <div class="client-position">Homeowner</div>
+                </div>
+            </div>
+
+            <div class="item-testimonial">
+                <div class="testimonial-card">
+                    <div class="review-text">
+                        Highly recommended service, premium materials used, craftsmanship excellent, roof transformation
+                        looks
+                        amazing.
+                    </div>
+                    <div class="stars">★★★★★</div>
+                    <div class="client-name">Sarah Ahmed</div>
+                    <div class="client-position">Property Manager</div>
+                </div>
+            </div>
+
+            <div class="item-testimonial">
+                <div class="testimonial-card">
+                    <div class="review-text">
+                        Reliable and trustworthy team, completed project on time with perfect finishing quality.
+                    </div>
+                    <div class="stars">★★★★☆</div>
+                    <div class="client-name">Usman Tariq</div>
+                    <div class="client-position">Business Owner</div>
+                </div>
+            </div>
+
+            <div class="item-testimonial">
+                <div class="testimonial-card">
+                    <div class="review-text">
+                        Exceptional experience overall, smooth process, top-notch customer service, highly satisfied
+                        with results.
+                    </div>
+                    <div class="stars">★★★★★</div>
+                    <div class="client-name">Fatima Noor</div>
+                    <div class="client-position">Architect</div>
+                </div>
+            </div>
+
+            <div class="item-testimonial">
+                <div class="testimonial-card">
+                    <div class="review-text">
+                        Attention to detail impressive, durable roofing solution delivered, overall look is stunning.
+                    </div>
+                    <div class="stars">★★★★★</div>
+                    <div class="client-name">Hamza Ali</div>
+                    <div class="client-position">Engineer</div>
+                </div>
+            </div>
+
+            <div class="item-testimonial">
+                <div class="testimonial-card">
+                    <div class="review-text">
+                        Professional team, clear communication, timely completion, extremely satisfied with overall
+                        roofing service.
+                    </div>
+                    <div class="stars">★★★★☆</div>
+                    <div class="client-name">Ayesha Malik</div>
+                    <div class="client-position">Interior Designer</div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- jQuery -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Owl Carousel JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+    <script>
+        $('#roofTestimonialsSection .roof-testimonial-carousel').owlCarousel({
+            loop: true,
+            margin: 20,
+            nav: false,
+            dots: true,
+            autoplay: true,
+            autoplayTimeout: 3500,
+            autoplayHoverPause: true,
+            responsive: {
+                0: { items: 1 },
+                600: { items: 2 },
+                1000: { items: 3 }
+            }
+        });
+    </script>
+
+    <!------------------------------------- Emergency CTA Section ====== -->
+    <section class="emergency-cta-2">
+        <h2>Need Emergency Roof Repair?</h2>
+        <p>Call Our Roofing Experts 24/7</p>
+        <div class="cta-buttons-2">
+            <a href="tel:+1234567890" class="call-now">Call Now</a>
+            <a href="#estimate" class="free-estimate">Get Free Estimate</a>
+        </div>
+    </section>
+
+    <script>
+        // Optional: Add a small pulse animation on buttons for attention
+        const buttons = document.querySelectorAll('.cta-buttons a');
+        buttons.forEach(btn => {
+            btn.addEventListener('mouseenter', () => {
+                btn.style.transform = 'scale(1.05)';
+            });
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+
+
+    <!------------------------------------- Footer -->
+
+    <footer>
+        <div class="footer-container">
+            <!-- About -->
+            <div class="footer-column">
+                <div class="footer-logo">Roof<span>Pro</span></div>
+                <p>
+                    Professional roofing services you can trust. We deliver durable,
+                    high-quality roofing solutions for homes and businesses.
+                </p>
+            </div>
+
+            <!-- Services -->
+            <div class="footer-column">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="Service.html">Roof Repair</a></li>
+                    <li><a href="Service.html">Roof Replacement</a></li>
+                    <li><a href="Service.html">Roof Inspection</a></li>
+                    <li><a href="Service.html">Gutter Installation</a></li>
+                </ul>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About_Us.html">About Us</a></li>
+                    <li><a href="Project.html">Projects</a></li>
+                    <li><a href="Contact-Us.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul class="contact-info">
+                    <li><span>📍</span> Dallas, TX</li>
+                    <li><span>📞</span> (555) 123-4567</li>
+                    <li><span>✉</span> info@roofing.com</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 Roofing Company | <a href="#">Privacy Policy</a>
+        </div>
+    </footer>
+
+
+</body>
+
+</html>

@@ -1,0 +1,427 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="Contact.css" />
+  <link rel="shortcut icon" href="Logo.png" type="image/x-icon" />
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet" />
+
+  <!-- Mapbox CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <!-- Owl Carousel CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+
+  <title>Roofing Projects</title>
+
+</head>
+
+<body>
+  <!-- Pre-Loader -->
+
+
+  <!-- Header Section -->
+  <header class="header" id="header">
+    <div class="container">
+      <!-- Logo -->
+      <div class="logo">
+        <a href="#"><img src="Logo.png" alt="RoofPro Logo" /></a>
+      </div>
+
+      <!-- Navigation -->
+      <nav class="nav">
+        <ul class="nav-links" id="nav-links">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="About_Us.html">About Us</a></li>
+          <li><a href="Service.html">Services</a></li>
+          <li><a href="Project.html">Projects</a></li>
+          <li><a href="Contact-Us.html">Contact</a></li>
+        </ul>
+      </nav>
+
+      <!-- Contact & Hamburger -->
+      <div class="contact-cta">
+        <a href="tel:+15551234567" class="phone">📞 Call Now</a>
+        <div class="hamburger" id="hamburger">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+    </div>
+
+    <!-- Trust Badge -->
+    <div class="trust-badge">⭐ 4.9 Rating | Licensed & Insured</div>
+  </header>
+
+  <!-- Sticky Mobile CTA -->
+  <div class="sticky-cta">
+    <a href="tel:+15551234567">📞 Call Now | Get Free Estimate</a>
+  </div>
+
+  <!-- Script Hamburger -->
+  <Script>
+    const hamburger = document.getElementById("hamburger");
+    const navLinks = document.getElementById("nav-links");
+    const navItems = document.querySelectorAll(".nav-links li a");
+    const header = document.getElementById("header");
+
+    // Toggle hamburger menu
+    hamburger.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+      hamburger.classList.toggle("active");
+    });
+
+    // Close menu when a link is clicked (mobile/tablet)
+    navItems.forEach((link) => {
+      link.addEventListener("click", () => {
+        if (navLinks.classList.contains("active")) {
+          navLinks.classList.remove("active");
+          hamburger.classList.remove("active");
+        }
+      });
+    });
+
+    // Shrink header on scroll
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 50) {
+        header.classList.add("shrink");
+      } else {
+        header.classList.remove("shrink");
+      }
+    });
+
+  </Script>
+
+
+  <!-- ------------------------------- HERO SECTION ------------------------------- -->
+
+  <section class="contact-hero">
+    <div class="hero-content" id="heroContent">
+      <h1>Get in Touch with Roofing Experts</h1>
+      <p>We’re here to help with repairs, installations, and free estimates.</p>
+      <a href="#" class="cta-btn">Request a Free Quote</a>
+    </div>
+    <!-- Animated floating shapes -->
+          <span class="shape shape1"></span>
+          <span class="shape shape2"></span>
+          <span class="shape shape3"></span>
+  </section>
+
+  <script>
+
+    /* SCROLL REVEAL */
+    window.addEventListener("load", () => {
+      document.getElementById("heroContent").classList.add("active");
+    });
+
+    /* BUTTON RIPPLE EFFECT */
+    document.querySelector(".cta-btn").addEventListener("click", function (e) {
+      let ripple = document.createElement("span");
+      let rect = this.getBoundingClientRect();
+      ripple.style.left = (e.clientX - rect.left) + "px";
+      ripple.style.top = (e.clientY - rect.top) + "px";
+      this.appendChild(ripple);
+
+      setTimeout(() => {
+        ripple.remove();
+      }, 600);
+    });
+
+  </script>
+
+  <!-- ------------------------------- Get In Touch SECTION ------------------------------- -->
+
+  <section class="contact-section">
+
+    <h2 class="section-title">Get In Touch</h2>
+    <p class="section-subtitle">We provide premium roofing solutions with trusted support</p>
+
+    <div class="contact-grid">
+
+      <div class="contact-card">
+        <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+        <h3>Our Address</h3>
+        <p>123 Roofing Street, NY</p>
+        <button class="contact-btn">View Location</button>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+        <h3>Call Us</h3>
+        <p>+1 234 567 890</p>
+        <button class="contact-btn">Call Now</button>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+        <h3>Email Us</h3>
+        <p>info@roofing.com</p>
+        <button class="contact-btn">Send Email</button>
+      </div>
+
+      <div class="contact-card">
+        <div class="contact-icon"><i class="fa-solid fa-clock"></i></div>
+        <h3>Working Hours</h3>
+        <p>Mon - Sat: 9AM - 6PM</p>
+        <button class="contact-btn">Book Now</button>
+      </div>
+
+    </div>
+  </section>
+
+  <script>
+    // SCROLL REVEAL
+    const cards = document.querySelectorAll('.contact-card');
+
+    const reveal = () => {
+      const trigger = window.innerHeight * 0.85;
+
+      cards.forEach((card, index) => {
+        const top = card.getBoundingClientRect().top;
+
+        if (top < trigger) {
+          setTimeout(() => {
+            card.classList.add('show');
+          }, index * 150);
+        }
+      });
+    };
+
+    window.addEventListener('scroll', reveal);
+    window.addEventListener('load', reveal);
+
+    // RIPPLE EFFECT
+    document.querySelectorAll('.contact-btn').forEach(btn => {
+      btn.addEventListener('click', function (e) {
+        const circle = document.createElement("span");
+        const size = Math.max(this.clientWidth, this.clientHeight);
+
+        circle.style.width = circle.style.height = size + "px";
+        circle.style.left = e.offsetX - size / 2 + "px";
+        circle.style.top = e.offsetY - size / 2 + "px";
+
+        this.appendChild(circle);
+
+        setTimeout(() => circle.remove(), 600);
+      });
+    });
+  </script>
+
+  <!-- ------------------------------ Contact Form --------------------------------------- -->
+
+
+  <div class="container-form">
+
+    <h2>Get Free Estimate</h2>
+
+    <div class="success" id="successMsg">
+      ✅ Your request has been sent successfully!
+    </div>
+
+    <form id="contactForm" class="grid">
+
+      <div class="input-group">
+        <input type="text" id="name" required>
+        <label>Full Name</label>
+        <div class="error">Enter valid name</div>
+      </div>
+
+      <div class="input-group">
+        <input type="tel" id="phone" required>
+        <label>Phone</label>
+        <div class="error">Enter valid phone</div>
+      </div>
+
+      <div class="input-group">
+        <input type="email" id="email" required>
+        <label>Email</label>
+        <div class="error">Enter valid email</div>
+      </div>
+
+      <div class="input-group">
+        <select id="service" required>
+          <option value=""></option>
+          <option>Roof Repair</option>
+          <option>Roof Installation</option>
+          <option>Inspection</option>
+        </select>
+        <label>Service</label>
+        <div class="error">Select service</div>
+      </div>
+
+      <div class="input-group full">
+        <textarea id="message" required></textarea>
+        <label>Message</label>
+        <div class="error">Message required</div>
+      </div>
+
+      <div class="full">
+        <button class="btn" type="submit">Get Free Estimate</button>
+      </div>
+
+    </form>
+
+  </div>
+<!-- EmailJS Library -->
+<script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+
+  <script>
+
+    /* EMAIL JS INIT */
+    (function () {
+      emailjs.init("B1HJwzcRQLnm9dnh2");
+    })();
+
+    /* Validation */
+    const form = document.getElementById("contactForm");
+    const successMsg = document.getElementById("successMsg");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      let valid = true;
+
+      const inputs = form.querySelectorAll("input, textarea, select");
+
+      inputs.forEach(input => {
+        const error = input.parentElement.querySelector(".error");
+
+        if (!input.value.trim()) {
+          error.style.display = "block";
+          valid = false;
+        } else {
+          error.style.display = "none";
+        }
+      });
+
+      if (!valid) return;
+
+      /* SEND EMAIL */
+      emailjs.send("service_xp73nh4", "template_syiytw1", {
+        from_name: document.getElementById("name").value,
+        phone: document.getElementById("phone").value,
+        email: document.getElementById("email").value,
+        service: document.getElementById("service").value,
+        message: document.getElementById("message").value,
+        to_email: "maazofficial@gmail.com"
+      })
+        .then(() => {
+          successMsg.style.display = "block";
+          form.reset();
+        })
+        .catch(() => {
+          alert("Error sending message");
+        });
+
+    });
+  </script>
+
+  <!-- ---------------------- Map Section ------------------ -->
+
+  <section class="map-section">
+
+    <div class="map-wrapper">
+
+      <h2>Find Us on Map</h2>
+      <p>Visit our location easily using the map below. We are always ready to serve you with the best experience.</p>
+
+      <div class="map-container">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2483.2775588087574!2d-0.12408!3d51.50886!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x487604b900d26973%3A0x4291f3172409ea92!2s14%20Adelaide%20St%2C%20London!5e0!3m2!1sen!2suk!4v1234567890"
+          allowfullscreen="" loading="lazy">
+        </iframe>
+      </div>
+
+    </div>
+
+  </section>
+
+
+  <!-- ====== Emergency CTA Section ====== -->
+  <section class="emergency-cta-2">
+    <h2>Need Emergency Roof Repair?</h2>
+    <p>Call Our Roofing Experts 24/7</p>
+    <div class="cta-buttons-2">
+      <a href="tel:+1234567890" class="call-now">Call Now</a>
+      <a href="#estimate" class="free-estimate">Get Free Estimate</a>
+    </div>
+  </section>
+
+  <script>
+    // Optional: Add a small pulse animation on buttons for attention
+    const buttons = document.querySelectorAll('.cta-buttons a');
+    buttons.forEach(btn => {
+      btn.addEventListener('mouseenter', () => {
+        btn.style.transform = 'scale(1.05)';
+      });
+      btn.addEventListener('mouseleave', () => {
+        btn.style.transform = 'scale(1)';
+      });
+    });
+  </script>
+
+
+  <!-- Footer -->
+
+  <footer>
+    <div class="footer-container">
+      <!-- About -->
+      <div class="footer-column">
+        <div class="footer-logo">Roof<span>Pro</span></div>
+        <p>
+          Professional roofing services you can trust. We deliver durable,
+          high-quality roofing solutions for homes and businesses.
+        </p>
+      </div>
+
+      <!-- Services -->
+      <div class="footer-column">
+        <h3>Services</h3>
+        <ul>
+          <li><a href="Service.html">Roof Repair</a></li>
+          <li><a href="Service.html">Roof Replacement</a></li>
+          <li><a href="Service.html">Roof Inspection</a></li>
+          <li><a href="Service.html">Gutter Installation</a></li>
+        </ul>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="footer-column">
+        <h3>Quick Links</h3>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="About_Us.html">About Us</a></li>
+          <li><a href="Project.html">Projects</a></li>
+          <li><a href="Contact-Us.html">Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div class="footer-column">
+        <h3>Contact</h3>
+        <ul class="contact-info">
+          <li><span>📍</span> Dallas, TX</li>
+          <li><span>📞</span> (555) 123-4567</li>
+          <li><span>✉</span> info@roofing.com</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      © 2026 Roofing Company | <a href="#">Privacy Policy</a>
+    </div>
+  </footer>
+
+</body>
+
+</html>
