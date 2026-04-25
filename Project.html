@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="Project.css" />
+    <link rel="shortcut icon" href="Logo.png" type="image/x-icon" />
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <!-- Owl Carousel CSS -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" />
+
+    <title>Roofing Projects</title>
+
+</head>
+
+<body>
+    <!-- Pre-Loader -->
+
+
+    <!-- Header Section -->
+    <header class="header" id="header">
+        <div class="container">
+            <!-- Logo -->
+            <div class="logo">
+                <a href="#"><img src="Logo.png" alt="RoofPro Logo" /></a>
+            </div>
+
+            <!-- Navigation -->
+            <nav class="nav">
+                <ul class="nav-links" id="nav-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About_Us.html">About Us</a></li>
+                    <li><a href="Service.html">Services</a></li>
+                    <li><a href="Project.html">Projects</a></li>
+                    <li><a href="Contact-Us.html">Contact</a></li>
+                </ul>
+            </nav>
+
+            <!-- Contact & Hamburger -->
+            <div class="contact-cta">
+                <a href="tel:+15551234567" class="phone">📞 Call Now</a>
+                <div class="hamburger" id="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Trust Badge -->
+        <div class="trust-badge">⭐ 4.9 Rating | Licensed & Insured</div>
+    </header>
+
+    <!-- Sticky Mobile CTA -->
+    <div class="sticky-cta">
+        <a href="tel:+15551234567">📞 Call Now | Get Free Estimate</a>
+    </div>
+
+    <!-- Script Hamburger -->
+    <Script>
+        const hamburger = document.getElementById("hamburger");
+        const navLinks = document.getElementById("nav-links");
+        const navItems = document.querySelectorAll(".nav-links li a");
+        const header = document.getElementById("header");
+
+        // Toggle hamburger menu
+        hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+            hamburger.classList.toggle("active");
+        });
+
+        // Close menu when a link is clicked (mobile/tablet)
+        navItems.forEach((link) => {
+            link.addEventListener("click", () => {
+                if (navLinks.classList.contains("active")) {
+                    navLinks.classList.remove("active");
+                    hamburger.classList.remove("active");
+                }
+            });
+        });
+
+        // Shrink header on scroll
+        window.addEventListener("scroll", () => {
+            if (window.scrollY > 50) {
+                header.classList.add("shrink");
+            } else {
+                header.classList.remove("shrink");
+            }
+        });
+    </Script>
+
+
+    <!----------------------------------- HeRO Section  -->
+
+    <section class="hero">
+
+        <!-- Background Video -->
+        <video autoplay muted loop>
+            <source src="videoplayback.mp4" type="video/mp4">
+        </video>
+
+        <!-- Content -->
+        <div class="hero-content" id="heroContent">
+            <h1>Our Roofing Projects</h1>
+            <p>Explore our craftsmanship through real projects we’ve completed with precision and care.</p>
+            <a href="#" class="btn">Get Free Estimate</a>
+        </div>
+
+    </section>
+
+    <script>
+        /* SCROLL REVEAL */
+        window.addEventListener("load", () => {
+            document.getElementById("heroContent").classList.add("active");
+        });
+
+        /* BUTTON RIPPLE EFFECT */
+        document.querySelector(".btn").addEventListener("click", function (e) {
+            let x = e.clientX - e.target.offsetLeft;
+            let y = e.clientY - e.target.offsetTop;
+
+            let ripple = document.createElement("span");
+            ripple.style.left = x + "px";
+            ripple.style.top = y + "px";
+
+            this.appendChild(ripple);
+
+            setTimeout(() => {
+                ripple.remove();
+            }, 600);
+        });
+    </script>
+
+    <!------------------------------------- Portfolio Section -->
+
+    <section class="portfolio">
+        <h1 class="title">Our <span> Roofing Projects</span></h1>
+        <p class="subtitle">
+            Explore our roofing websites designed to attract customers, build trust, and generate real leads through
+            modern
+            design and proven conversion strategies.
+        </p>
+
+        <!-- FILTERS -->
+        <div class="filters">
+            <button class="filter-btn active" data-filter="all">All</button>
+            <button class="filter-btn" data-filter="residential">Residential</button>
+            <button class="filter-btn" data-filter="commercial">Commercial</button>
+            <button class="filter-btn" data-filter="repair">Repair</button>
+            <button class="filter-btn" data-filter="installation">Installation</button>
+        </div>
+
+        <!-- GRID -->
+        <div class="grid">
+
+            <div class="card" data-category="residential"
+                onclick="openPreview('Residential Roofing Website', 'https://www.mcelroymetal.com/')">
+                <img src="Residential.jpg" />
+                <div class="card-content">
+                    <div class="tag">Residential</div>
+                    <h3>Home Roofing Service</h3>
+                    <p>Modern roofing website for homeowners.</p>
+                </div>
+            </div>
+
+            <div class="card" data-category="commercial"
+                onclick="openPreview('Commercial Roofing', 'https://www.kirberg.com/')">
+                <img src="Commercial.jpg" />
+                <div class="card-content">
+                    <div class="tag">Commercial</div>
+                    <h3>Commercial Roofing Co.</h3>
+                    <p>Enterprise roofing solutions platform.</p>
+                </div>
+            </div>
+
+            <div class="card" data-category="repair"
+                onclick="openPreview('Roof Repair Service', 'https://www.roofclaim.com/')">
+                <img src="repair.jpg" />
+                <div class="card-content">
+                    <div class="tag">Repair</div>
+                    <h3>Roof Repair Experts</h3>
+                    <p>Emergency roof fixing services website.</p>
+                </div>
+            </div>
+
+            <div class="card" data-category="installation"
+                onclick="openPreview('Roofing Installation Page', 'https://www.owenscorning.com/en-us/roofing')">
+                <img src="Installation.jpg" />
+                <div class="card-content">
+                    <div class="tag">Installation</div>
+                    <h3>Lead Generation Installation</h3>
+                    <p>High-conversion roofing installation page.</p>
+                </div>
+            </div>
+
+            <div class="card" data-category="residential"
+                onclick="openPreview('Metal Roofing Website', 'https://www.mcelroymetal.com/')">
+                <img src="Residential.png" />
+                <div class="card-content">
+                    <div class="tag">Residential</div>
+                    <h3>Metal Roofing</h3>
+                    <p>Premium metal roofing services site.</p>
+                </div>
+            </div>
+
+            <div class="card" data-category="commercial"
+                onclick="openPreview('Industrial Roofing', 'https://www.tremcoroofing.com/')">
+                <img src="Commercial.webp" />
+                <div class="card-content">
+                    <div class="tag">Commercial</div>
+                    <h3>Industrial Roofing</h3>
+                    <p>Heavy-duty roofing solutions.</p>
+                </div>
+            </div>
+
+            <div class="card" data-category="repair"
+                onclick="openPreview('Leak Repair Website', 'https://roofing-websites.com/')">
+                <img src="repair.jpeg" />
+                <div class="card-content">
+                    <div class="tag">Repair</div>
+                    <h3>Leak Repair Service</h3>
+                    <p>Quick response leak fixing platform.</p>
+                </div>
+            </div>
+
+            <div class="card" data-category="installation"
+                onclick="openPreview('Roof Inspection Funnel', 'https://www.mcelroymetal.com/')">
+                <img src="Installation.webp" />
+                <div class="card-content">
+                    <div class="tag">Installation</div>
+                    <h3>Roof Inspection Funnel</h3>
+                    <p>Customer conversion funnel website.</p>
+                </div>
+            </div>
+
+            <div class="card" data-category="residential"
+                onclick="openPreview('Shingle Roofing', 'https://www.tremcoroofing.com/')">
+                <img src="Residential.webp" />
+                <div class="card-content">
+                    <div class="tag">Residential</div>
+                    <h3>Shingle Roofing</h3>
+                    <p>Classic shingle roofing services site.</p>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- MODAL -->
+    <div class="preview-modal" id="previewModal">
+        <div class="preview-header">
+            <h3 id="previewTitle"></h3>
+            <button class="close-btn" onclick="closePreview()">Close Preview</button>
+        </div>
+        <iframe id="previewFrame" class="preview-frame"></iframe>
+    </div>
+
+    <script>
+        const buttons = document.querySelectorAll(".filter-btn");
+        const cards = document.querySelectorAll(".card");
+
+        buttons.forEach((btn) => {
+            btn.addEventListener("click", () => {
+                document.querySelector(".active").classList.remove("active");
+                btn.classList.add("active");
+
+                let filter = btn.dataset.filter;
+
+                cards.forEach((card) => {
+                    card.style.display =
+                        filter === "all" || card.dataset.category === filter
+                            ? "block"
+                            : "none";
+                });
+            });
+        });
+
+        function openPreview(title, url) {
+            document.getElementById("previewTitle").innerText = title;
+            document.getElementById("previewFrame").src = url;
+            document.getElementById("previewModal").style.display = "flex";
+        }
+
+        function closePreview() {
+            document.getElementById("previewModal").style.display = "none";
+            document.getElementById("previewFrame").src = "";
+        }
+    </script>
+
+
+    <!-- ====== Emergency CTA Section ====== -->
+    <section class="emergency-cta-2">
+        <h2>Need Emergency Roof Repair?</h2>
+        <p>Call Our Roofing Experts 24/7</p>
+        <div class="cta-buttons-2">
+            <a href="tel:+1234567890" class="call-now">Call Now</a>
+            <a href="#estimate" class="free-estimate">Get Free Estimate</a>
+        </div>
+    </section>
+
+    <script>
+        // Optional: Add a small pulse animation on buttons for attention
+        const buttons2 = document.querySelectorAll('.cta-buttons a');
+        buttons2.forEach(btn => {
+            btn.addEventListener('mouseenter', () => {
+                btn.style.transform = 'scale(1.05)';
+            });
+            btn.addEventListener('mouseleave', () => {
+                btn.style.transform = 'scale(1)';
+            });
+        });
+    </script>
+
+
+    <!-- Footer -->
+
+    <footer>
+        <div class="footer-container">
+            <!-- About -->
+            <div class="footer-column">
+                <div class="footer-logo">Roof<span>Pro</span></div>
+                <p>
+                    Professional roofing services you can trust. We deliver durable,
+                    high-quality roofing solutions for homes and businesses.
+                </p>
+            </div>
+
+            <!-- Services -->
+            <div class="footer-column">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="Service.html">Roof Repair</a></li>
+                    <li><a href="Service.html">Roof Replacement</a></li>
+                    <li><a href="Service.html">Roof Inspection</a></li>
+                    <li><a href="Service.html">Gutter Installation</a></li>
+                </ul>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="About_Us.html">About Us</a></li>
+                    <li><a href="Project.html">Projects</a></li>
+                    <li><a href="Contact-Us.html">Contact</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="footer-column">
+                <h3>Contact</h3>
+                <ul class="contact-info">
+                    <li><span>📍</span> Dallas, TX</li>
+                    <li><span>📞</span> (555) 123-4567</li>
+                    <li><span>✉</span> info@roofing.com</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer-bottom">
+            © 2026 Roofing Company | <a href="#">Privacy Policy</a>
+        </div>
+    </footer>
+
+
+
+</body>
+
+</html>
